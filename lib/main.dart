@@ -11,11 +11,6 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: CalculatorScreen(),
-      // home: Scaffold(
-      //   body: Center(
-      //     child: Text('Hello World!'),
-      //   ),
-      // ),
     );
   }
 }
@@ -55,10 +50,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.cyan[900],
       appBar: AppBar(
         title: Text('Calculator'),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.yellow,
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 5),
@@ -87,7 +82,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 calcbutton('AC', Colors.grey, Colors.black),
                 calcbutton('+/-', Colors.grey, Colors.black),
                 calcbutton('%', Colors.grey, Colors.black),
-                calcbutton('/', Colors.amber[700]!, Colors.white),
+                calcbutton('/', Colors.amber[700]!, Colors.red),
               ],
             ),//Row
             SizedBox(height: 10,),
@@ -98,7 +93,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 calcbutton('7', Colors.grey, Colors.black),
                 calcbutton('8', Colors.grey, Colors.black),
                 calcbutton('9', Colors.grey, Colors.black),
-                calcbutton('X', Colors.amber[700]!, Colors.white),
+                calcbutton('X', Colors.amber[700]!, Colors.red),
               ],
             ),//Row
             SizedBox(height: 10,),
@@ -109,7 +104,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 calcbutton('4', Colors.grey, Colors.black),
                 calcbutton('5', Colors.grey, Colors.black),
                 calcbutton('6', Colors.grey, Colors.black),
-                calcbutton('-', Colors.amber[700]!, Colors.white),
+                calcbutton('-', Colors.amber[700]!, Colors.red),
               ],
             ),//Row
             SizedBox(height: 10,),
@@ -120,7 +115,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 calcbutton('1', Colors.grey, Colors.black),
                 calcbutton('2', Colors.grey, Colors.black),
                 calcbutton('3', Colors.grey, Colors.black),
-                calcbutton('+', Colors.amber[700]!, Colors.white),
+                calcbutton('+', Colors.amber[700]!, Colors.red),
               ],
             ),//Row
             SizedBox(height: 10,),
@@ -134,7 +129,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                           style: ElevatedButton.styleFrom(
                               shape: StadiumBorder(),
                               padding: EdgeInsets.fromLTRB(34, 20, 128, 20),
-                              primary: Colors.white,
+                              primary: Colors.red,
                                                          ),
                           child: Text(
                                   "0",
@@ -144,8 +139,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                              ),
                                         ),
                                      ),
-                                      calcbutton('.', Colors.grey[850]!, Colors.white),
-                                      calcbutton('=', Colors.amber[700]!, Colors.white),
+                                      calcbutton('.', Colors.grey[850]!, Colors.red),
+                                      calcbutton('=', Colors.amber[700]!, Colors.red),
               ],
              ),
           ], // Added closing bracket here
@@ -181,13 +176,13 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
          finalResult = add();
       } else if( preOpr == '-') {
           finalResult = sub();
-      } else if( preOpr == 'x') {
+      } else if( preOpr == 'X') {
           finalResult = mul();
       } else if( preOpr == '/') {
           finalResult = div();
       } 
 
-    } else if(btnText == '+' || btnText == '-' || btnText == 'x' || btnText == '/' || btnText == '=') {
+    } else if(btnText == '+' || btnText == '-' || btnText == 'X' || btnText == '/' || btnText == '=') {
 
       if(numOne == 0) {
           numOne = double.parse(result);
@@ -199,7 +194,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           finalResult = add();
       } else if( opr == '-') {
           finalResult = sub();
-      } else if( opr == 'x') {
+      } else if( opr == 'X') {
           finalResult = mul();
       } else if( opr == '/') {
           finalResult = div();
